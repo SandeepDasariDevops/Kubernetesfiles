@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nodelabels
+  labels:
+    env: development
+spec:
+  containers:
+    - name: c00
+      image: centos
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Sai; sleep 5 ; done"]
+  nodeSelector:
+    mynode: testing
