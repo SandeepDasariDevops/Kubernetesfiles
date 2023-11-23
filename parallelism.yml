@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  parallelism: 5
+  template:
+    metadata:
+      name: testjob
+    spec:
+      containers:
+      - name: mycont
+        image: centos
+        command: ["bin/bash", "-c", "echo Saidemy; sleep 10"]
+      restartPolicy: Never
